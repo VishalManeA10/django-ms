@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: python-ms-practice
+  name: python-ms-practice
+  namespace: vmane
+spec:
+  selector:
+    matchLabels:
+      app: python-ms-practice
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: python-ms-practice
+    spec:
+      containers:
+        - name: sys-test-python-api
+          # enter the path to your image, be sure to include the correct region prefix
+          image: us-phoenix-1.ocir.io/axqel8fpeyhe/vmane-dev:vmane
+          ports:
+            - containerPort: 30033
+          env: # Setting Environmental Variables
+            - name: AUDIT_LOG_HOST   # Setting Database host address
+              value: sys-audit-trail-rest.default.svc.cluster.local:30027
+            - name: DB_HOST   # Setting Database host address
+              value: moco-mysql-cluster.database.svc.cluster.local:3306
+            - name: DB_NAME  # Setting Database name
+              value: saas_sys
+            - name: DB_USERNAME  # Setting Database username
+              value: moco-writable
+            # - name: DB_PASSWORD # Setting Database password
+            #   valueFrom:
+            #     secretKeyRef:
+            #        name: mysql-database.mysql-cluster
+            #        key: WRITABLE_PASSWORD
+            #        optional: false
+            - name: KAFKA_HOST
+              value: cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+            - name: KAFKA_REGISTRY_HOST
+              value: schema-cp-schema-registry.kafka.svc.cluster.local:8081
+            - name: DATA_SERVICE_SESSION_URL   # Setting Database host address
+              value: http://sys-data-session-svc.default.svc.cluster.local:30020
+            - name: DATA_SERVICE_SERVER_URL   # Setting Database host address
+              value: http://sys-data-server-svc.default.svc.cluster.local:30013
+            - name: DATA_SERVICE_TENANT_URL   # Setting Database host address
+              value: http://sys-data-tenant-svc.default.svc.cluster.local:30010
+            - name: DATA_SERVICE_PRODUCT_URL   # Setting Database host address
+              value: http://sys-data-product.default.svc.cluster.local:30011
+            - name: REDIS_HOST_URL
+              value: redis-master.default.svc.cluster.local
+            - name: REDIS_PORT
+              value: '6379'
+      imagePullSecrets:
+        # enter the name of the secret you created
+        - name: vmane-secret
+
+---
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  name: python-ms-practice
+  namespace: vmane
+spec:
+  selector:
+    app: python-ms-practice
+  ports:
+    - protocol: "TCP"
+      port: 9001 # The port that the service is running on in the cluster
+      targetPort: 9001 # The port exposed by the service
+#  type: LoadBalancer # type of the service. LoadBalancer indicates that our service will be external.
