@@ -1,0 +1,23 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.istio.io/v1beta1","kind":"VirtualService","metadata":{"annotations":{},"name":"yt-vs","namespace":"default"},"spec":{"gateways":["istio-gateway"],"hosts":["yt.dev.oci.a10networks.com"],"http":[{"route":[{"destination":{"host":"sys-notification-manager.yintse-ns.svc.cluster.local","port":{"number":30034}}}]}]}}
+  creationTimestamp: "2023-03-02T22:57:56Z"
+  generation: 1
+  name: yt-vs
+  namespace: default
+  resourceVersion: "110392695"
+  uid: 7a172a08-4c6b-4dd6-b92d-21dbc23507d9
+spec:
+  gateways:
+  - istio-gateway
+  hosts:
+  - yt.dev.oci.a10networks.com
+  http:
+  - route:
+    - destination:
+        host: sys-notification-manager.yintse-ns.svc.cluster.local
+        port:
+          number: 30034

@@ -1,0 +1,95 @@
+2023-03-16T12:49:40.548223Z	info	FLAG: --concurrency="2"
+2023-03-16T12:49:40.548544Z	info	FLAG: --domain="vmane.svc.cluster.local"
+2023-03-16T12:49:40.548581Z	info	FLAG: --help="false"
+2023-03-16T12:49:40.548606Z	info	FLAG: --log_as_json="false"
+2023-03-16T12:49:40.548764Z	info	FLAG: --log_caller=""
+2023-03-16T12:49:40.548802Z	info	FLAG: --log_output_level="default:info"
+2023-03-16T12:49:40.548827Z	info	FLAG: --log_rotate=""
+2023-03-16T12:49:40.548850Z	info	FLAG: --log_rotate_max_age="30"
+2023-03-16T12:49:40.548874Z	info	FLAG: --log_rotate_max_backups="1000"
+2023-03-16T12:49:40.548898Z	info	FLAG: --log_rotate_max_size="104857600"
+2023-03-16T12:49:40.548921Z	info	FLAG: --log_stacktrace_level="default:none"
+2023-03-16T12:49:40.548960Z	info	FLAG: --log_target="[stdout]"
+2023-03-16T12:49:40.548991Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2023-03-16T12:49:40.549004Z	info	FLAG: --outlierLogPath=""
+2023-03-16T12:49:40.549009Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2023-03-16T12:49:40.549013Z	info	FLAG: --proxyLogLevel="warning"
+2023-03-16T12:49:40.549016Z	info	FLAG: --serviceCluster="istio-proxy"
+2023-03-16T12:49:40.549020Z	info	FLAG: --stsPort="0"
+2023-03-16T12:49:40.549023Z	info	FLAG: --templateFile=""
+2023-03-16T12:49:40.549028Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2023-03-16T12:49:40.549039Z	info	FLAG: --vklog="0"
+2023-03-16T12:49:40.549044Z	info	Version 1.13.3-b28579cb30c12c428ea58279b7c06f3302abe924-Clean
+2023-03-16T12:49:40.549418Z	info	Proxy role	ips=[10.244.1.69 fe80::dc09:f1ff:fe85:c8de] type=sidecar id=python-ms-practice-cdcfc46f8-tf8sf.vmane domain=vmane.svc.cluster.local
+2023-03-16T12:49:40.549533Z	info	Apply proxy config from env {}
+
+2023-03-16T12:49:40.550903Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2023-03-16T12:49:40.550927Z	info	JWT policy is third-party-jwt
+2023-03-16T12:49:40.552233Z	error	error in getting aws info for iam/info : Get "http://[fd00:ec2::254]/latest/meta-data/iam/info": dial tcp [fd00:ec2::254]:80: connect: network is unreachable
+2023-03-16T12:49:40.553608Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2023-03-16T12:49:40.553650Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2023-03-16T12:49:40.553792Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2023-03-16T12:49:40.555685Z	info	Opening status port 15020
+2023-03-16T12:49:40.581135Z	info	ads	All caches have been synced up in 42.633541ms, marking server ready
+2023-03-16T12:49:40.581777Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2023-03-16T12:49:40.587528Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2023-03-16T12:49:40.581903Z	info	sds	Starting SDS grpc server
+2023-03-16T12:49:40.588377Z	info	starting Http service at 127.0.0.1:15004
+2023-03-16T12:49:40.589993Z	info	Pilot SAN: [istiod.istio-system.svc]
+2023-03-16T12:49:40.591678Z	info	Starting proxy agent
+2023-03-16T12:49:40.591748Z	info	Epoch 0 starting
+2023-03-16T12:49:40.591791Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2023-03-16T12:49:40.669252Z	info	cache	generated new workload certificate	latency=87.274012ms ttl=23h59m59.330763364s
+2023-03-16T12:49:40.669332Z	info	cache	Root cert has changed, start rotating root cert
+2023-03-16T12:49:40.669379Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2023-03-16T12:49:40.669515Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.330490987s
+2023-03-16T12:49:40.696906Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2023-03-16T12:49:40.811589Z	info	ads	ADS: new connection for node:python-ms-practice-cdcfc46f8-tf8sf.vmane-1
+2023-03-16T12:49:40.811722Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.188284841s
+2023-03-16T12:49:40.812173Z	info	ads	SDS: PUSH request for node:python-ms-practice-cdcfc46f8-tf8sf.vmane resources:1 size:1.1kB resource:ROOTCA
+2023-03-16T12:49:40.854352Z	info	ads	ADS: new connection for node:python-ms-practice-cdcfc46f8-tf8sf.vmane-2
+2023-03-16T12:49:40.854583Z	info	cache	returned workload certificate from cache	ttl=23h59m59.145424471s
+2023-03-16T12:49:40.854800Z	info	ads	SDS: PUSH request for node:python-ms-practice-cdcfc46f8-tf8sf.vmane resources:1 size:4.0kB resource:default
+2023-03-16T12:49:41.301267Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:49:41.976887Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:43.975692Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:45.976233Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:47.974840Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:49.976007Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:51.977539Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:53.976141Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:55.974672Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:57.976591Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:49:59.974967Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:01.975315Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:03.974558Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:05.976137Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:07.974958Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:09.977260Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:11.975226Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:13.974275Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:15.976714Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:50:17.975920Z	info	Readiness succeeded in 37.436141102s
+2023-03-16T12:50:17.976389Z	info	Envoy proxy is ready
+2023-03-16T12:50:19.429809Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-wasm-filter.wasm
+
+2023-03-16T12:50:32.269870Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+[2023-03-16T12:51:09.391Z] "GET /users/1 HTTP/1.1" 200 - via_upstream - "-" 0 65 7 6 "10.244.0.1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "737eb00f-1a3a-9336-91e8-7d854d84e377" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.69:9001" inbound|9001|| 127.0.0.6:51503 10.244.1.69:9001 10.244.0.1:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:52:15.645Z] "GET /users/1 HTTP/1.1" 200 - via_upstream - "-" 0 65 5 5 "10.244.0.1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "1dd2495e-d5a2-994a-b307-5c09640845c9" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.69:9001" inbound|9001|| 127.0.0.6:51503 10.244.1.69:9001 10.244.0.1:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default

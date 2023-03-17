@@ -1,0 +1,537 @@
+2023-03-16T12:01:44.019859Z	info	FLAG: --concurrency="2"
+2023-03-16T12:01:44.019888Z	info	FLAG: --domain="chandan.svc.cluster.local"
+2023-03-16T12:01:44.019893Z	info	FLAG: --help="false"
+2023-03-16T12:01:44.019897Z	info	FLAG: --log_as_json="false"
+2023-03-16T12:01:44.019900Z	info	FLAG: --log_caller=""
+2023-03-16T12:01:44.019903Z	info	FLAG: --log_output_level="default:info"
+2023-03-16T12:01:44.019906Z	info	FLAG: --log_rotate=""
+2023-03-16T12:01:44.019908Z	info	FLAG: --log_rotate_max_age="30"
+2023-03-16T12:01:44.019911Z	info	FLAG: --log_rotate_max_backups="1000"
+2023-03-16T12:01:44.019914Z	info	FLAG: --log_rotate_max_size="104857600"
+2023-03-16T12:01:44.019917Z	info	FLAG: --log_stacktrace_level="default:none"
+2023-03-16T12:01:44.019925Z	info	FLAG: --log_target="[stdout]"
+2023-03-16T12:01:44.019943Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2023-03-16T12:01:44.019946Z	info	FLAG: --outlierLogPath=""
+2023-03-16T12:01:44.019949Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2023-03-16T12:01:44.019951Z	info	FLAG: --proxyLogLevel="warning"
+2023-03-16T12:01:44.019954Z	info	FLAG: --serviceCluster="istio-proxy"
+2023-03-16T12:01:44.019957Z	info	FLAG: --stsPort="0"
+2023-03-16T12:01:44.019959Z	info	FLAG: --templateFile=""
+2023-03-16T12:01:44.019963Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2023-03-16T12:01:44.019967Z	info	FLAG: --vklog="0"
+2023-03-16T12:01:44.019970Z	info	Version 1.13.3-b28579cb30c12c428ea58279b7c06f3302abe924-Clean
+2023-03-16T12:01:44.020234Z	info	Proxy role	ips=[10.244.1.66 fe80::2c86:ecff:feeb:c71a] type=sidecar id=csf-chandan-demo-app-54d8bbd899-crh28.chandan domain=chandan.svc.cluster.local
+2023-03-16T12:01:44.020309Z	info	Apply proxy config from env {}
+
+2023-03-16T12:01:44.021389Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2023-03-16T12:01:44.021477Z	info	JWT policy is third-party-jwt
+2023-03-16T12:01:44.022074Z	error	error in getting aws info for iam/info : Get "http://[fd00:ec2::254]/latest/meta-data/iam/info": dial tcp [fd00:ec2::254]:80: connect: network is unreachable
+2023-03-16T12:01:44.026069Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2023-03-16T12:01:44.026110Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2023-03-16T12:01:44.026242Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2023-03-16T12:01:44.027862Z	info	Opening status port 15020
+2023-03-16T12:01:44.047835Z	info	ads	All caches have been synced up in 32.250596ms, marking server ready
+2023-03-16T12:01:44.048460Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2023-03-16T12:01:44.048564Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2023-03-16T12:01:44.048872Z	info	sds	Starting SDS grpc server
+2023-03-16T12:01:44.050599Z	info	Pilot SAN: [istiod.istio-system.svc]
+2023-03-16T12:01:44.051961Z	info	Starting proxy agent
+2023-03-16T12:01:44.052012Z	info	Epoch 0 starting
+2023-03-16T12:01:44.052042Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2023-03-16T12:01:44.052494Z	info	starting Http service at 127.0.0.1:15004
+2023-03-16T12:01:44.149950Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2023-03-16T12:01:44.307798Z	info	ads	ADS: new connection for node:csf-chandan-demo-app-54d8bbd899-crh28.chandan-1
+2023-03-16T12:01:44.348780Z	info	ads	ADS: new connection for node:csf-chandan-demo-app-54d8bbd899-crh28.chandan-2
+2023-03-16T12:01:44.351046Z	info	cache	generated new workload certificate	latency=302.819727ms ttl=23h59m59.648965347s
+2023-03-16T12:01:44.351070Z	info	cache	Root cert has changed, start rotating root cert
+2023-03-16T12:01:44.351082Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+2023-03-16T12:01:44.351124Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.648878071s
+2023-03-16T12:01:44.351141Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.648860508s
+2023-03-16T12:01:44.351766Z	info	cache	returned workload certificate from cache	ttl=23h59m59.648238937s
+2023-03-16T12:01:44.351939Z	info	ads	SDS: PUSH request for node:csf-chandan-demo-app-54d8bbd899-crh28.chandan resources:1 size:4.0kB resource:default
+2023-03-16T12:01:44.351769Z	info	ads	SDS: PUSH request for node:csf-chandan-demo-app-54d8bbd899-crh28.chandan resources:1 size:1.1kB resource:ROOTCA
+2023-03-16T12:01:44.352010Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.64799312s
+2023-03-16T12:01:44.352048Z	info	ads	SDS: PUSH for node:csf-chandan-demo-app-54d8bbd899-crh28.chandan resources:1 size:1.1kB resource:ROOTCA
+2023-03-16T12:01:44.866490Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthRoot(context_id:1, "a10-auth-public-filter")
+2023-03-16T12:01:44.866710Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:1version: 1 A10AuthRoot::onConfigure(145)
+2023-03-16T12:01:44.871104Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthRoot(context_id:1, "a10-auth-public-filter")
+2023-03-16T12:01:44.871335Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:1version: 1 A10AuthRoot::onConfigure(145)
+2023-03-16T12:01:44.925182Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthRoot(context_id:1, "a10-auth-public-filter")
+2023-03-16T12:01:44.925374Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:1version: 1 A10AuthRoot::onConfigure(145)
+2023-03-16T12:01:44.927186Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthRoot(context_id:1, "a10-auth-public-filter")
+2023-03-16T12:01:44.927393Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:1version: 1 A10AuthRoot::onConfigure(145)
+2023-03-16T12:01:45.654305Z	info	Readiness succeeded in 1.637432423s
+2023-03-16T12:01:45.654707Z	info	Envoy proxy is ready
+2023-03-16T12:01:47.765243Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2 version: 1: A10AuthHttpCall::onRequestHeaders(26, true)
+2023-03-16T12:01:47.765566Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T12:01:47.765585Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 26
+2023-03-16T12:01:47.765592Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T12:01:47.765596Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:47.765598Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:47.765601Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T12:01:47.765604Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T12:01:47.765606Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T12:01:47.765608Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T12:01:47.765611Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+2023-03-16T12:01:47.765613Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+2023-03-16T12:01:47.765616Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.5
+2023-03-16T12:01:47.765618Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate, br
+2023-03-16T12:01:47.765621Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: dnt -> 1
+2023-03-16T12:01:47.765623Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T12:01:47.765625Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T12:01:47.765627Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T12:01:47.765629Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> none
+2023-03-16T12:01:47.765631Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T12:01:47.765633Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-gpc -> 1
+2023-03-16T12:01:47.765637Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: te -> trailers
+2023-03-16T12:01:47.765640Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> csrftoken=eriCfulwAN34zWxdYdgWfRZ4Cxt6zvX7; JSESSIONID=node0rxvizchh0v1w185ix4nuvnn3a24.node0; username=csingh@a10networks.com; tenantname=a10networks
+2023-03-16T12:01:47.765644Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.128
+2023-03-16T12:01:47.765647Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T12:01:47.765650Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> fae40a0c-0352-9258-b2f9-112f580f6ab1
+2023-03-16T12:01:47.765652Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T12:01:47.765654Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> c39d28ead705d252b35c1217677e6eec
+2023-03-16T12:01:47.765657Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> b35c1217677e6eec
+2023-03-16T12:01:47.765660Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T12:01:47.765662Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T12:01:47.765665Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=c1b052ff14e9c26f28c7712b0f46aa2d1d5074f26447ae4b061e8b93e045d1ab;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T12:01:47.766184Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T12:01:47.766200Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T12:01:47.784560Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2: A10AuthHttpCall::a10AuthHttpCallback(17, 18, 0)
+2023-03-16T12:01:47.784617Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:2 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T12:01:47.784654Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-tenant-id value: a10networks
+2023-03-16T12:01:47.784670Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:authorization value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDNXZ4N09zZmlldVpxalpKOFFvbEVqZDNta3E4MnNLclJ5SERQS04tNDd3In0.eyJleHAiOjE2NzkwMDMwNTIsImlhdCI6MTY3ODk2NzA1MiwiYXV0aF90aW1lIjoxNjc4OTY3MDUyLCJqdGkiOiJkZDRlZjNlMi03M2QxLTRhMWQtYmVjNC02NGEwYmQyMjA4MWEiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLmRldi5vY2kuYTEwbmV0d29ya3MuY29tL3JlYWxtcy9hMTBuZXR3b3JrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhNzQ3MGE4Mi05MjhhLTQzOGYtYjhiMC0wMDAzNjIxYThlYWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhMTAtYXV0aCIsInNlc3Npb25fc3RhdGUiOiJjZWJiYjJiNS1iNWRlLTQyNzAtOWEzMC02OTg0NDA0YzVhNmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vYTEwLXNhYXMtYXV0aC5hMTBuZXR3b3Jrcy5jb20iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1hMTBuZXR3b3JrcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImNlYmJiMmI1LWI1ZGUtNDI3MC05YTMwLTY5ODQ0MDRjNWE2ZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNoYW5kYW4gU2luZ2giLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIiwiZ2l2ZW5fbmFtZSI6IkNoYW5kYW4iLCJmYW1pbHlfbmFtZSI6IlNpbmdoIiwiZW1haWwiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIn0.eaz5SlpiP4CRFJl4U78_YT-SoBrF9KDcYBBKCH6uU0iEsniqq9ku2q4Ie904Qf1EjnayWsz3ksX2WQ8dEK6wUXErOa-jPAInsqFRQjXrbKGyoJ-OjNcYWdAmpJDhxzOV3hRr-3CrXvZieSpoc0YmGORNIPGCm0hy5pI3FNs7OslCp0f1HrRCwS_jwcwWfpZEEwzzpnD-xela2XTppUU0DPBL9AkIzKKeKIUrrKovU6ZoQeq-953DKQBWiBC2C4v5ic7l68NOxmJBxQVcb_iK8Cld5Qi-oUjA_GWQ90ETjJ5MHZ1YceTmlAhQlSqdSaHEplLXDZbeogNLDH2nUGOv2Q
+2023-03-16T12:01:47.784682Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value:  isEmpty: true
+2023-03-16T12:01:47.784700Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value: 
+2023-03-16T12:01:47.784721Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10AuthHttpCallback received 200 OK from auth server, continuing to microservice!
+2023-03-16T12:01:47.788738Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2 : A10AuthHttpCall::onResponseHeaders(10, false)
+[2023-03-16T12:01:47.764Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 89 24 3 "10.244.0.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0" "fae40a0c-0352-9258-b2f9-112f580f6ab1" "csf-chandan-demo-app.dev.oci.a10networks.com" "10.244.1.66:8000" inbound|8000|| 127.0.0.6:59733 10.244.1.66:8000 10.244.0.128:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local default
+2023-03-16T12:01:50.295751Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3 version: 1: A10AuthHttpCall::onRequestHeaders(26, true)
+2023-03-16T12:01:50.297579Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T12:01:50.297605Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 26
+2023-03-16T12:01:50.297612Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T12:01:50.297616Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:50.297618Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:50.297621Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T12:01:50.297624Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T12:01:50.297627Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T12:01:50.297629Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T12:01:50.297632Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+2023-03-16T12:01:50.297635Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+2023-03-16T12:01:50.297638Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.5
+2023-03-16T12:01:50.297641Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate, br
+2023-03-16T12:01:50.297643Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: dnt -> 1
+2023-03-16T12:01:50.297645Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T12:01:50.297648Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T12:01:50.297651Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T12:01:50.297653Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> none
+2023-03-16T12:01:50.297656Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T12:01:50.297658Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-gpc -> 1
+2023-03-16T12:01:50.297660Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: te -> trailers
+2023-03-16T12:01:50.297663Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> csrftoken=eriCfulwAN34zWxdYdgWfRZ4Cxt6zvX7; JSESSIONID=node0rxvizchh0v1w185ix4nuvnn3a24.node0; username=csingh@a10networks.com; tenantname=a10networks
+2023-03-16T12:01:50.297666Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.128
+2023-03-16T12:01:50.297669Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T12:01:50.297672Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> 9b3dcdc4-5343-9ccf-a4d2-fd5d99dced9c
+2023-03-16T12:01:50.297674Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T12:01:50.297677Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> 24fe817dddbae9184fe7223314598a85
+2023-03-16T12:01:50.297679Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 4fe7223314598a85
+2023-03-16T12:01:50.297682Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T12:01:50.297684Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T12:01:50.297687Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=c1b052ff14e9c26f28c7712b0f46aa2d1d5074f26447ae4b061e8b93e045d1ab;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T12:01:50.297783Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T12:01:50.297796Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T12:01:50.316279Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3: A10AuthHttpCall::a10AuthHttpCallback(17, 18, 0)
+2023-03-16T12:01:50.316358Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:3 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T12:01:50.316399Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-tenant-id value: a10networks
+2023-03-16T12:01:50.316421Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:authorization value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDNXZ4N09zZmlldVpxalpKOFFvbEVqZDNta3E4MnNLclJ5SERQS04tNDd3In0.eyJleHAiOjE2NzkwMDMwNTIsImlhdCI6MTY3ODk2NzA1MiwiYXV0aF90aW1lIjoxNjc4OTY3MDUyLCJqdGkiOiJkZDRlZjNlMi03M2QxLTRhMWQtYmVjNC02NGEwYmQyMjA4MWEiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLmRldi5vY2kuYTEwbmV0d29ya3MuY29tL3JlYWxtcy9hMTBuZXR3b3JrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhNzQ3MGE4Mi05MjhhLTQzOGYtYjhiMC0wMDAzNjIxYThlYWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhMTAtYXV0aCIsInNlc3Npb25fc3RhdGUiOiJjZWJiYjJiNS1iNWRlLTQyNzAtOWEzMC02OTg0NDA0YzVhNmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vYTEwLXNhYXMtYXV0aC5hMTBuZXR3b3Jrcy5jb20iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1hMTBuZXR3b3JrcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImNlYmJiMmI1LWI1ZGUtNDI3MC05YTMwLTY5ODQ0MDRjNWE2ZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNoYW5kYW4gU2luZ2giLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIiwiZ2l2ZW5fbmFtZSI6IkNoYW5kYW4iLCJmYW1pbHlfbmFtZSI6IlNpbmdoIiwiZW1haWwiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIn0.eaz5SlpiP4CRFJl4U78_YT-SoBrF9KDcYBBKCH6uU0iEsniqq9ku2q4Ie904Qf1EjnayWsz3ksX2WQ8dEK6wUXErOa-jPAInsqFRQjXrbKGyoJ-OjNcYWdAmpJDhxzOV3hRr-3CrXvZieSpoc0YmGORNIPGCm0hy5pI3FNs7OslCp0f1HrRCwS_jwcwWfpZEEwzzpnD-xela2XTppUU0DPBL9AkIzKKeKIUrrKovU6ZoQeq-953DKQBWiBC2C4v5ic7l68NOxmJBxQVcb_iK8Cld5Qi-oUjA_GWQ90ETjJ5MHZ1YceTmlAhQlSqdSaHEplLXDZbeogNLDH2nUGOv2Q
+2023-03-16T12:01:50.316469Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value:  isEmpty: true
+2023-03-16T12:01:50.316511Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value: 
+2023-03-16T12:01:50.316535Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10AuthHttpCallback received 200 OK from auth server, continuing to microservice!
+2023-03-16T12:01:50.319000Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3 : A10AuthHttpCall::onResponseHeaders(10, false)
+[2023-03-16T12:01:50.295Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 89 23 2 "10.244.0.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0" "9b3dcdc4-5343-9ccf-a4d2-fd5d99dced9c" "csf-chandan-demo-app.dev.oci.a10networks.com" "10.244.1.66:8000" inbound|8000|| 127.0.0.6:59733 10.244.1.66:8000 10.244.0.128:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local default
+2023-03-16T12:01:53.292368Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 4 version: 1: A10AuthHttpCall::onRequestHeaders(26, true)
+2023-03-16T12:01:53.292944Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T12:01:53.292961Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 26
+2023-03-16T12:01:53.292969Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T12:01:53.292974Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:53.292976Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:53.292978Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T12:01:53.292981Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T12:01:53.292984Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T12:01:53.292986Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T12:01:53.292988Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+2023-03-16T12:01:53.292991Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+2023-03-16T12:01:53.292993Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.5
+2023-03-16T12:01:53.292996Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate, br
+2023-03-16T12:01:53.292999Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: dnt -> 1
+2023-03-16T12:01:53.294125Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T12:01:53.294138Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T12:01:53.294142Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T12:01:53.294144Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> none
+2023-03-16T12:01:53.294146Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T12:01:53.294149Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-gpc -> 1
+2023-03-16T12:01:53.294151Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: te -> trailers
+2023-03-16T12:01:53.294154Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> csrftoken=eriCfulwAN34zWxdYdgWfRZ4Cxt6zvX7; JSESSIONID=node0rxvizchh0v1w185ix4nuvnn3a24.node0; username=csingh@a10networks.com; tenantname=a10networks
+2023-03-16T12:01:53.294157Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.128
+2023-03-16T12:01:53.294160Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T12:01:53.294162Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> a415e90c-e304-93a7-bb7f-c0f467c7b214
+2023-03-16T12:01:53.294165Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T12:01:53.294167Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> 09c581a7e18c01c53aeb569a991111b7
+2023-03-16T12:01:53.294169Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 3aeb569a991111b7
+2023-03-16T12:01:53.294172Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T12:01:53.294174Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T12:01:53.294177Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=c1b052ff14e9c26f28c7712b0f46aa2d1d5074f26447ae4b061e8b93e045d1ab;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T12:01:53.294299Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T12:01:53.294309Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T12:01:53.309999Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 4: A10AuthHttpCall::a10AuthHttpCallback(17, 18, 0)
+2023-03-16T12:01:53.310066Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:4 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T12:01:53.310100Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-tenant-id value: a10networks
+2023-03-16T12:01:53.310122Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:authorization value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDNXZ4N09zZmlldVpxalpKOFFvbEVqZDNta3E4MnNLclJ5SERQS04tNDd3In0.eyJleHAiOjE2NzkwMDMwNTIsImlhdCI6MTY3ODk2NzA1MiwiYXV0aF90aW1lIjoxNjc4OTY3MDUyLCJqdGkiOiJkZDRlZjNlMi03M2QxLTRhMWQtYmVjNC02NGEwYmQyMjA4MWEiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLmRldi5vY2kuYTEwbmV0d29ya3MuY29tL3JlYWxtcy9hMTBuZXR3b3JrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhNzQ3MGE4Mi05MjhhLTQzOGYtYjhiMC0wMDAzNjIxYThlYWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhMTAtYXV0aCIsInNlc3Npb25fc3RhdGUiOiJjZWJiYjJiNS1iNWRlLTQyNzAtOWEzMC02OTg0NDA0YzVhNmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vYTEwLXNhYXMtYXV0aC5hMTBuZXR3b3Jrcy5jb20iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1hMTBuZXR3b3JrcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImNlYmJiMmI1LWI1ZGUtNDI3MC05YTMwLTY5ODQ0MDRjNWE2ZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNoYW5kYW4gU2luZ2giLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIiwiZ2l2ZW5fbmFtZSI6IkNoYW5kYW4iLCJmYW1pbHlfbmFtZSI6IlNpbmdoIiwiZW1haWwiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIn0.eaz5SlpiP4CRFJl4U78_YT-SoBrF9KDcYBBKCH6uU0iEsniqq9ku2q4Ie904Qf1EjnayWsz3ksX2WQ8dEK6wUXErOa-jPAInsqFRQjXrbKGyoJ-OjNcYWdAmpJDhxzOV3hRr-3CrXvZieSpoc0YmGORNIPGCm0hy5pI3FNs7OslCp0f1HrRCwS_jwcwWfpZEEwzzpnD-xela2XTppUU0DPBL9AkIzKKeKIUrrKovU6ZoQeq-953DKQBWiBC2C4v5ic7l68NOxmJBxQVcb_iK8Cld5Qi-oUjA_GWQ90ETjJ5MHZ1YceTmlAhQlSqdSaHEplLXDZbeogNLDH2nUGOv2Q
+2023-03-16T12:01:53.310140Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value:  isEmpty: true
+2023-03-16T12:01:53.310161Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value: 
+2023-03-16T12:01:53.310173Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10AuthHttpCallback received 200 OK from auth server, continuing to microservice!
+2023-03-16T12:01:53.311888Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 4 : A10AuthHttpCall::onResponseHeaders(10, false)
+[2023-03-16T12:01:53.292Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 89 19 1 "10.244.0.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0" "a415e90c-e304-93a7-bb7f-c0f467c7b214" "csf-chandan-demo-app.dev.oci.a10networks.com" "10.244.1.66:8000" inbound|8000|| 127.0.0.6:59733 10.244.1.66:8000 10.244.0.128:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local default
+2023-03-16T12:01:54.723624Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 5 version: 1: A10AuthHttpCall::onRequestHeaders(26, true)
+2023-03-16T12:01:54.723974Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T12:01:54.724008Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 26
+2023-03-16T12:01:54.724030Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T12:01:54.724046Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:54.724072Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:01:54.724088Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T12:01:54.724103Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T12:01:54.724117Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T12:01:54.724131Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T12:01:54.724145Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+2023-03-16T12:01:54.724163Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+2023-03-16T12:01:54.724183Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.5
+2023-03-16T12:01:54.724202Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate, br
+2023-03-16T12:01:54.724259Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: dnt -> 1
+2023-03-16T12:01:54.724278Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T12:01:54.724293Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T12:01:54.724307Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T12:01:54.724321Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> none
+2023-03-16T12:01:54.724335Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T12:01:54.724349Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-gpc -> 1
+2023-03-16T12:01:54.724363Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: te -> trailers
+2023-03-16T12:01:54.724373Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> csrftoken=eriCfulwAN34zWxdYdgWfRZ4Cxt6zvX7; JSESSIONID=node0rxvizchh0v1w185ix4nuvnn3a24.node0; username=csingh@a10networks.com; tenantname=a10networks
+2023-03-16T12:01:54.724377Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.128
+2023-03-16T12:01:54.724379Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T12:01:54.724381Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> b903db8f-463c-9a11-ab24-a6f46b8333fe
+2023-03-16T12:01:54.724383Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T12:01:54.724386Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> 4bb191664cbd3fc5754853a8328bf85e
+2023-03-16T12:01:54.724388Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 754853a8328bf85e
+2023-03-16T12:01:54.724390Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T12:01:54.724392Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T12:01:54.724394Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=c1b052ff14e9c26f28c7712b0f46aa2d1d5074f26447ae4b061e8b93e045d1ab;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T12:01:54.724511Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T12:01:54.724526Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T12:01:54.742237Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 5: A10AuthHttpCall::a10AuthHttpCallback(17, 18, 0)
+2023-03-16T12:01:54.742267Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:5 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T12:01:54.742285Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-tenant-id value: a10networks
+2023-03-16T12:01:54.742290Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:authorization value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDNXZ4N09zZmlldVpxalpKOFFvbEVqZDNta3E4MnNLclJ5SERQS04tNDd3In0.eyJleHAiOjE2NzkwMDMwNTIsImlhdCI6MTY3ODk2NzA1MiwiYXV0aF90aW1lIjoxNjc4OTY3MDUyLCJqdGkiOiJkZDRlZjNlMi03M2QxLTRhMWQtYmVjNC02NGEwYmQyMjA4MWEiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLmRldi5vY2kuYTEwbmV0d29ya3MuY29tL3JlYWxtcy9hMTBuZXR3b3JrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhNzQ3MGE4Mi05MjhhLTQzOGYtYjhiMC0wMDAzNjIxYThlYWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhMTAtYXV0aCIsInNlc3Npb25fc3RhdGUiOiJjZWJiYjJiNS1iNWRlLTQyNzAtOWEzMC02OTg0NDA0YzVhNmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vYTEwLXNhYXMtYXV0aC5hMTBuZXR3b3Jrcy5jb20iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1hMTBuZXR3b3JrcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImNlYmJiMmI1LWI1ZGUtNDI3MC05YTMwLTY5ODQ0MDRjNWE2ZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNoYW5kYW4gU2luZ2giLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIiwiZ2l2ZW5fbmFtZSI6IkNoYW5kYW4iLCJmYW1pbHlfbmFtZSI6IlNpbmdoIiwiZW1haWwiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIn0.eaz5SlpiP4CRFJl4U78_YT-SoBrF9KDcYBBKCH6uU0iEsniqq9ku2q4Ie904Qf1EjnayWsz3ksX2WQ8dEK6wUXErOa-jPAInsqFRQjXrbKGyoJ-OjNcYWdAmpJDhxzOV3hRr-3CrXvZieSpoc0YmGORNIPGCm0hy5pI3FNs7OslCp0f1HrRCwS_jwcwWfpZEEwzzpnD-xela2XTppUU0DPBL9AkIzKKeKIUrrKovU6ZoQeq-953DKQBWiBC2C4v5ic7l68NOxmJBxQVcb_iK8Cld5Qi-oUjA_GWQ90ETjJ5MHZ1YceTmlAhQlSqdSaHEplLXDZbeogNLDH2nUGOv2Q
+2023-03-16T12:01:54.742293Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value:  isEmpty: true
+2023-03-16T12:01:54.742306Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value: 
+2023-03-16T12:01:54.742310Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10AuthHttpCallback received 200 OK from auth server, continuing to microservice!
+2023-03-16T12:01:54.744614Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 5 : A10AuthHttpCall::onResponseHeaders(10, false)
+[2023-03-16T12:01:54.723Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 89 21 2 "10.244.0.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0" "b903db8f-463c-9a11-ab24-a6f46b8333fe" "csf-chandan-demo-app.dev.oci.a10networks.com" "10.244.1.66:8000" inbound|8000|| 127.0.0.6:59733 10.244.1.66:8000 10.244.0.128:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local default
+2023-03-16T12:02:15.264784Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6 version: 1: A10AuthHttpCall::onRequestHeaders(26, true)
+2023-03-16T12:02:15.265287Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T12:02:15.265306Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 26
+2023-03-16T12:02:15.265313Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T12:02:15.265317Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:02:15.265320Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T12:02:15.265322Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T12:02:15.265325Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T12:02:15.265328Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T12:02:15.265330Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T12:02:15.265332Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+2023-03-16T12:02:15.265335Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+2023-03-16T12:02:15.265337Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.5
+2023-03-16T12:02:15.265340Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate, br
+2023-03-16T12:02:15.265342Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: dnt -> 1
+2023-03-16T12:02:15.265345Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T12:02:15.265347Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T12:02:15.265349Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T12:02:15.265351Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> none
+2023-03-16T12:02:15.265354Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T12:02:15.265356Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-gpc -> 1
+2023-03-16T12:02:15.265358Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: te -> trailers
+2023-03-16T12:02:15.265360Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> csrftoken=eriCfulwAN34zWxdYdgWfRZ4Cxt6zvX7; JSESSIONID=node0rxvizchh0v1w185ix4nuvnn3a24.node0; username=csingh@a10networks.com; tenantname=a10networks
+2023-03-16T12:02:15.265364Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.128
+2023-03-16T12:02:15.265366Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T12:02:15.265368Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> bf3cfc19-0ac4-9787-9341-8c0cba331e65
+2023-03-16T12:02:15.265371Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T12:02:15.265373Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> 65a94432ce20e45fa42de58a05b341e2
+2023-03-16T12:02:15.265375Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> a42de58a05b341e2
+2023-03-16T12:02:15.265377Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T12:02:15.265380Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T12:02:15.265383Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=c1b052ff14e9c26f28c7712b0f46aa2d1d5074f26447ae4b061e8b93e045d1ab;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T12:02:15.265507Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T12:02:15.265522Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T12:02:15.280194Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6: A10AuthHttpCall::a10AuthHttpCallback(17, 18, 0)
+2023-03-16T12:02:15.280241Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:6 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T12:02:15.280277Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-tenant-id value: a10networks
+2023-03-16T12:02:15.280291Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:authorization value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDNXZ4N09zZmlldVpxalpKOFFvbEVqZDNta3E4MnNLclJ5SERQS04tNDd3In0.eyJleHAiOjE2NzkwMDMwNTIsImlhdCI6MTY3ODk2NzA1MiwiYXV0aF90aW1lIjoxNjc4OTY3MDUyLCJqdGkiOiJkZDRlZjNlMi03M2QxLTRhMWQtYmVjNC02NGEwYmQyMjA4MWEiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLmRldi5vY2kuYTEwbmV0d29ya3MuY29tL3JlYWxtcy9hMTBuZXR3b3JrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhNzQ3MGE4Mi05MjhhLTQzOGYtYjhiMC0wMDAzNjIxYThlYWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhMTAtYXV0aCIsInNlc3Npb25fc3RhdGUiOiJjZWJiYjJiNS1iNWRlLTQyNzAtOWEzMC02OTg0NDA0YzVhNmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vYTEwLXNhYXMtYXV0aC5hMTBuZXR3b3Jrcy5jb20iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1hMTBuZXR3b3JrcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6ImNlYmJiMmI1LWI1ZGUtNDI3MC05YTMwLTY5ODQ0MDRjNWE2ZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNoYW5kYW4gU2luZ2giLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIiwiZ2l2ZW5fbmFtZSI6IkNoYW5kYW4iLCJmYW1pbHlfbmFtZSI6IlNpbmdoIiwiZW1haWwiOiJjc2luZ2hAYTEwbmV0d29ya3MuY29tIn0.eaz5SlpiP4CRFJl4U78_YT-SoBrF9KDcYBBKCH6uU0iEsniqq9ku2q4Ie904Qf1EjnayWsz3ksX2WQ8dEK6wUXErOa-jPAInsqFRQjXrbKGyoJ-OjNcYWdAmpJDhxzOV3hRr-3CrXvZieSpoc0YmGORNIPGCm0hy5pI3FNs7OslCp0f1HrRCwS_jwcwWfpZEEwzzpnD-xela2XTppUU0DPBL9AkIzKKeKIUrrKovU6ZoQeq-953DKQBWiBC2C4v5ic7l68NOxmJBxQVcb_iK8Cld5Qi-oUjA_GWQ90ETjJ5MHZ1YceTmlAhQlSqdSaHEplLXDZbeogNLDH2nUGOv2Q
+2023-03-16T12:02:15.280297Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value:  isEmpty: true
+2023-03-16T12:02:15.280307Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value: 
+2023-03-16T12:02:15.280311Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10AuthHttpCallback received 200 OK from auth server, continuing to microservice!
+2023-03-16T12:02:15.281875Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6 : A10AuthHttpCall::onResponseHeaders(10, false)
+[2023-03-16T12:02:15.264Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 89 17 1 "10.244.0.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0" "bf3cfc19-0ac4-9787-9341-8c0cba331e65" "csf-chandan-demo-app.dev.oci.a10networks.com" "10.244.1.66:8000" inbound|8000|| 127.0.0.6:59733 10.244.1.66:8000 10.244.0.128:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local default
+2023-03-16T12:30:31.415467Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2023-03-16T13:02:26.024028Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2 version: 1: A10AuthHttpCall::onRequestHeaders(28, true)
+2023-03-16T13:02:26.024388Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T13:02:26.024405Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 28
+2023-03-16T13:02:26.024409Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:02:26.024412Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:26.024413Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:26.024415Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T13:02:26.024417Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T13:02:26.024418Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T13:02:26.024420Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T13:02:26.024422Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cache-control -> max-age=0
+2023-03-16T13:02:26.024423Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua -> "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"
+2023-03-16T13:02:26.024425Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-mobile -> ?0
+2023-03-16T13:02:26.024426Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-platform -> "Windows"
+2023-03-16T13:02:26.024428Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T13:02:26.024430Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-16T13:02:26.024464Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2023-03-16T13:02:26.024466Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> cross-site
+2023-03-16T13:02:26.024469Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T13:02:26.024471Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T13:02:26.024473Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T13:02:26.024475Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: referer -> https://statics.teams.cdn.office.net/
+2023-03-16T13:02:26.024477Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.9
+2023-03-16T13:02:26.024481Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> _ga=GA1.1.161164117.1678682413; _ga_QH2D86NPFT=GS1.1.1678682412.1.1.1678682560.0.0.0; _ce.s=v~ecf76a4d7b8d8b780f0c784f560d78c2c2c6d2d9~vpv~0~v11.rlc~1678682414333~v11nv~-1~v11.sla~1678682560957~v11.s~258c1160-c159-11ed-aa33-137190dcc4ed~v11.send~1678682560939
+2023-03-16T13:02:26.024484Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate
+2023-03-16T13:02:26.024487Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.1
+2023-03-16T13:02:26.024489Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T13:02:26.024492Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> 6ef7cee8-05a1-9179-a56a-9eb039b4ef5a
+2023-03-16T13:02:26.024494Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T13:02:26.024496Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> bb443ef49465b85a6912890430c8264a
+2023-03-16T13:02:26.024499Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 6912890430c8264a
+2023-03-16T13:02:26.024502Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T13:02:26.024504Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T13:02:26.024514Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=166befb4c84ac3bcef20852452b5965059cdf4167198cc8c8c3bb3d26e7fca54;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T13:02:26.024772Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T13:02:26.024784Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T13:02:26.027527Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2: A10AuthHttpCall::a10AuthHttpCallback(12, 0, 0)
+2023-03-16T13:02:26.027554Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:2 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T13:02:26.027569Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 12
+2023-03-16T13:02:26.027571Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>:status -> 302
+2023-03-16T13:02:26.027574Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>date -> Thu, 16 Mar 2023 13:02:26 GMT
+2023-03-16T13:02:26.027576Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>vary -> Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+2023-03-16T13:02:26.027579Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>location -> https://a10-saas-auth.dev.oci.a10networks.com/changeTenancy?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:02:26.027581Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-content-type-options -> nosniff
+2023-03-16T13:02:26.027584Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-xss-protection -> 1; mode=block
+2023-03-16T13:02:26.027587Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>cache-control -> no-cache, no-store, max-age=0, must-revalidate
+2023-03-16T13:02:26.027590Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>pragma -> no-cache
+2023-03-16T13:02:26.027593Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>expires -> 0
+2023-03-16T13:02:26.027596Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-frame-options -> DENY
+2023-03-16T13:02:26.027599Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>content-length -> 0
+2023-03-16T13:02:26.027602Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-envoy-upstream-service-time -> 2
+2023-03-16T13:02:26.027605Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2: A10AuthHttpCall::a10AuthHttpCallback :status is 302
+2023-03-16T13:02:26.027612Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2: A10AuthHttpCall::a10AuthHttpCallback Response Body 
+2023-03-16T13:02:26.027629Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:2 A10AuthHttpCall::a10AuthHttpCallback() sendLocalResponse() succeeded.
+2023-03-16T13:02:26.027769Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 2 : A10AuthHttpCall::onResponseHeaders(11, true)
+[2023-03-16T13:02:26.023Z] "GET / HTTP/1.1" 302 -  - "-" 0 0 4 2 "10.244.0.1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "6ef7cee8-05a1-9179-a56a-9eb039b4ef5a" "csf-chandan-demo-app.dev.oci.a10networks.com" "-" inbound|8000|| - 10.244.1.66:8000 10.244.0.1:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local -
+2023-03-16T13:02:30.084923Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3 version: 1: A10AuthHttpCall::onRequestHeaders(28, true)
+2023-03-16T13:02:30.085572Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T13:02:30.085640Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 28
+2023-03-16T13:02:30.085677Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:02:30.085696Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:30.085713Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:30.085730Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T13:02:30.085746Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T13:02:30.085762Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T13:02:30.085777Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T13:02:30.085793Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cache-control -> max-age=0
+2023-03-16T13:02:30.085809Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua -> "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"
+2023-03-16T13:02:30.085830Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-mobile -> ?0
+2023-03-16T13:02:30.085846Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-platform -> "Windows"
+2023-03-16T13:02:30.085862Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T13:02:30.085877Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-16T13:02:30.085894Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2023-03-16T13:02:30.085909Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> cross-site
+2023-03-16T13:02:30.085926Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T13:02:30.085966Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T13:02:30.085985Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T13:02:30.086002Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: referer -> https://statics.teams.cdn.office.net/
+2023-03-16T13:02:30.086018Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.9
+2023-03-16T13:02:30.086035Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> _ga=GA1.1.161164117.1678682413; _ga_QH2D86NPFT=GS1.1.1678682412.1.1.1678682560.0.0.0; _ce.s=v~ecf76a4d7b8d8b780f0c784f560d78c2c2c6d2d9~vpv~0~v11.rlc~1678682414333~v11nv~-1~v11.sla~1678682560957~v11.s~258c1160-c159-11ed-aa33-137190dcc4ed~v11.send~1678682560939
+2023-03-16T13:02:30.086052Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate
+2023-03-16T13:02:30.086068Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.1
+2023-03-16T13:02:30.086084Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T13:02:30.086100Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> 2178922c-0e4b-9f0d-b726-a143d773a4c3
+2023-03-16T13:02:30.086117Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T13:02:30.086134Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> f48635e4389e88459ad1a0eb0ab4b8b5
+2023-03-16T13:02:30.086152Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 9ad1a0eb0ab4b8b5
+2023-03-16T13:02:30.086168Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T13:02:30.086184Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T13:02:30.086200Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=166befb4c84ac3bcef20852452b5965059cdf4167198cc8c8c3bb3d26e7fca54;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T13:02:30.086303Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T13:02:30.086328Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T13:02:30.090959Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3: A10AuthHttpCall::a10AuthHttpCallback(12, 0, 0)
+2023-03-16T13:02:30.090977Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:3 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T13:02:30.090987Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 12
+2023-03-16T13:02:30.090990Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>:status -> 302
+2023-03-16T13:02:30.090994Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>date -> Thu, 16 Mar 2023 13:02:30 GMT
+2023-03-16T13:02:30.090997Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>vary -> Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+2023-03-16T13:02:30.091000Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>location -> https://a10-saas-auth.dev.oci.a10networks.com/changeTenancy?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:02:30.091003Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-content-type-options -> nosniff
+2023-03-16T13:02:30.091006Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-xss-protection -> 1; mode=block
+2023-03-16T13:02:30.091008Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>cache-control -> no-cache, no-store, max-age=0, must-revalidate
+2023-03-16T13:02:30.091011Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>pragma -> no-cache
+2023-03-16T13:02:30.091013Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>expires -> 0
+2023-03-16T13:02:30.091015Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-frame-options -> DENY
+2023-03-16T13:02:30.091018Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>content-length -> 0
+2023-03-16T13:02:30.091020Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-envoy-upstream-service-time -> 4
+2023-03-16T13:02:30.091022Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3: A10AuthHttpCall::a10AuthHttpCallback :status is 302
+2023-03-16T13:02:30.091029Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3: A10AuthHttpCall::a10AuthHttpCallback Response Body 
+2023-03-16T13:02:30.091041Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:3 A10AuthHttpCall::a10AuthHttpCallback() sendLocalResponse() succeeded.
+2023-03-16T13:02:30.091112Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 3 : A10AuthHttpCall::onResponseHeaders(11, true)
+[2023-03-16T13:02:30.084Z] "GET / HTTP/1.1" 302 -  - "-" 0 0 6 4 "10.244.0.1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "2178922c-0e4b-9f0d-b726-a143d773a4c3" "csf-chandan-demo-app.dev.oci.a10networks.com" "-" inbound|8000|| - 10.244.1.66:8000 10.244.0.1:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local -
+2023-03-16T13:02:43.379663Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2023-03-16T13:02:52.962538Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 4 version: 1: A10AuthHttpCall::onRequestHeaders(27, true)
+2023-03-16T13:02:52.963192Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T13:02:52.963244Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 27
+2023-03-16T13:02:52.963277Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:02:52.963301Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:52.963320Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:52.963340Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T13:02:52.963360Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T13:02:52.963380Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T13:02:52.963398Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T13:02:52.963425Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cache-control -> max-age=0
+2023-03-16T13:02:52.963485Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: upgrade-insecure-requests -> 1
+2023-03-16T13:02:52.963509Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-16T13:02:52.963520Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2023-03-16T13:02:52.963523Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> cross-site
+2023-03-16T13:02:52.963526Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> navigate
+2023-03-16T13:02:52.963528Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-user -> ?1
+2023-03-16T13:02:52.963531Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> document
+2023-03-16T13:02:52.963534Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua -> "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"
+2023-03-16T13:02:52.963537Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-mobile -> ?0
+2023-03-16T13:02:52.963539Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-platform -> "Windows"
+2023-03-16T13:02:52.963542Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.9
+2023-03-16T13:02:52.963545Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> _ga=GA1.1.161164117.1678682413; _ga_QH2D86NPFT=GS1.1.1678682412.1.1.1678682560.0.0.0; _ce.s=v~ecf76a4d7b8d8b780f0c784f560d78c2c2c6d2d9~vpv~0~v11.rlc~1678682414333~v11nv~-1~v11.sla~1678682560957~v11.s~258c1160-c159-11ed-aa33-137190dcc4ed~v11.send~1678682560939; JSESSIONID=node0s9xbiysujsm413bcqr5bvltdm26.node0; username=vmane@a10networks.com; tenantname=a10networks
+2023-03-16T13:02:52.963549Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate
+2023-03-16T13:02:52.963551Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.1
+2023-03-16T13:02:52.963554Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T13:02:52.963556Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> 4d09b8a5-1855-918e-9266-a041b1ff3b37
+2023-03-16T13:02:52.963558Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T13:02:52.963560Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> 52204ba3a86ca75753d1ed0193aea21b
+2023-03-16T13:02:52.963563Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 53d1ed0193aea21b
+2023-03-16T13:02:52.963565Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T13:02:52.963567Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T13:02:52.963570Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=166befb4c84ac3bcef20852452b5965059cdf4167198cc8c8c3bb3d26e7fca54;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T13:02:52.963680Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T13:02:52.963714Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T13:02:52.981217Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 4: A10AuthHttpCall::a10AuthHttpCallback(17, 18, 0)
+2023-03-16T13:02:52.981299Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:4 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T13:02:52.981344Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-tenant-id value: a10networks
+2023-03-16T13:02:52.981355Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:authorization value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDNXZ4N09zZmlldVpxalpKOFFvbEVqZDNta3E4MnNLclJ5SERQS04tNDd3In0.eyJleHAiOjE2NzkwMDc3NjYsImlhdCI6MTY3ODk3MTc3MiwiYXV0aF90aW1lIjoxNjc4OTcxNzcxLCJqdGkiOiJhYTlkMjIyMC1hYTFiLTQ2YTQtOWZkOC1mMGMwZGE5YWRlZjkiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLmRldi5vY2kuYTEwbmV0d29ya3MuY29tL3JlYWxtcy9hMTBuZXR3b3JrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyYWJiNWZjYi0yNWJkLTRkNzQtYTBiNy05YmI4MWMxNDZmMWMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhMTAtYXV0aCIsInNlc3Npb25fc3RhdGUiOiIzNjJjMmJiZi1jMzU2LTRjNTEtOGYxMi02YzMyOWRmN2FiYjciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vYTEwLXNhYXMtYXV0aC5hMTBuZXR3b3Jrcy5jb20iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1hMTBuZXR3b3JrcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjM2MmMyYmJmLWMzNTYtNGM1MS04ZjEyLTZjMzI5ZGY3YWJiNyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlZpc2hhbCBNYW5lIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidm1hbmVAYTEwbmV0d29ya3MuY29tIiwiZ2l2ZW5fbmFtZSI6IlZpc2hhbCIsImZhbWlseV9uYW1lIjoiTWFuZSIsImVtYWlsIjoidm1hbmVAYTEwbmV0d29ya3MuY29tIn0.DjKgXhCe2KXmq8EP1QkHKRIlmNs592Ryr_ganjJsnSv9wtnmloBSCFa6k94zX38xrk9U5prXZiutcbvk-tx0n9nLPixnRxczMXbYP-r4T_4rIx491b1i8JRtKx8SlXjYSDlWoFXIbMHhR7OqpM3fvntaACXmeKXmqV2J1-P1OxXxxXsbrx-4XCpZnFBkuC85wJd3UnaPkKO7qTXznh6m17UrHQqg9m85ddDdEU5OhcPULfnTf9qfiWmeqjQ04umaG7w-OqfHzaOkWIreL5FdCfxw1CkqkWbDldMPWYF73A8DJjAqdSLKK990re0wyCzFb3F8ewNbQUQIJQj_-RduUQ
+2023-03-16T13:02:52.981359Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value:  isEmpty: true
+2023-03-16T13:02:52.981374Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value: 
+2023-03-16T13:02:52.981378Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10AuthHttpCallback received 200 OK from auth server, continuing to microservice!
+2023-03-16T13:02:52.984579Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 4 : A10AuthHttpCall::onResponseHeaders(10, false)
+[2023-03-16T13:02:52.962Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 89 22 2 "10.244.0.1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "4d09b8a5-1855-918e-9266-a041b1ff3b37" "csf-chandan-demo-app.dev.oci.a10networks.com" "10.244.1.66:8000" inbound|8000|| 127.0.0.6:48853 10.244.1.66:8000 10.244.0.1:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local default
+2023-03-16T13:02:54.964457Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 5 version: 1: A10AuthHttpCall::onRequestHeaders(25, true)
+2023-03-16T13:02:54.964524Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T13:02:54.964552Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 25
+2023-03-16T13:02:54.964568Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/favicon.ico
+2023-03-16T13:02:54.964579Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:54.964590Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:02:54.964600Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T13:02:54.964611Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /favicon.ico
+2023-03-16T13:02:54.964620Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T13:02:54.964630Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T13:02:54.964641Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua -> "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"
+2023-03-16T13:02:54.964661Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-mobile -> ?0
+2023-03-16T13:02:54.964678Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+2023-03-16T13:02:54.964690Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-ch-ua-platform -> "Windows"
+2023-03-16T13:02:54.964700Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+2023-03-16T13:02:54.964711Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-site -> same-origin
+2023-03-16T13:02:54.964721Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-mode -> no-cors
+2023-03-16T13:02:54.964731Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: sec-fetch-dest -> image
+2023-03-16T13:02:54.964741Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: referer -> https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:02:54.964751Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-language -> en-US,en;q=0.9
+2023-03-16T13:02:54.964761Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: cookie -> _ga=GA1.1.161164117.1678682413; _ga_QH2D86NPFT=GS1.1.1678682412.1.1.1678682560.0.0.0; _ce.s=v~ecf76a4d7b8d8b780f0c784f560d78c2c2c6d2d9~vpv~0~v11.rlc~1678682414333~v11nv~-1~v11.sla~1678682560957~v11.s~258c1160-c159-11ed-aa33-137190dcc4ed~v11.send~1678682560939; JSESSIONID=node0s9xbiysujsm413bcqr5bvltdm26.node0; username=vmane@a10networks.com; tenantname=a10networks
+2023-03-16T13:02:54.964775Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept-encoding -> gzip, deflate
+2023-03-16T13:02:54.964785Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.1
+2023-03-16T13:02:54.964795Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T13:02:54.964805Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> e9432191-a545-9440-9215-f76fe655fc99
+2023-03-16T13:02:54.964815Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T13:02:54.964824Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> fac06d420474202c91ca5f9cd9993847
+2023-03-16T13:02:54.964834Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 91ca5f9cd9993847
+2023-03-16T13:02:54.964844Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T13:02:54.964855Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T13:02:54.964866Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=166befb4c84ac3bcef20852452b5965059cdf4167198cc8c8c3bb3d26e7fca54;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T13:02:54.964952Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T13:02:54.964981Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T13:02:54.973977Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 5: A10AuthHttpCall::a10AuthHttpCallback(17, 18, 0)
+2023-03-16T13:02:54.974031Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:5 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T13:02:54.974074Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-tenant-id value: a10networks
+2023-03-16T13:02:54.974103Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:authorization value: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDNXZ4N09zZmlldVpxalpKOFFvbEVqZDNta3E4MnNLclJ5SERQS04tNDd3In0.eyJleHAiOjE2NzkwMDc3NjYsImlhdCI6MTY3ODk3MTc3MiwiYXV0aF90aW1lIjoxNjc4OTcxNzcxLCJqdGkiOiJhYTlkMjIyMC1hYTFiLTQ2YTQtOWZkOC1mMGMwZGE5YWRlZjkiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLmRldi5vY2kuYTEwbmV0d29ya3MuY29tL3JlYWxtcy9hMTBuZXR3b3JrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyYWJiNWZjYi0yNWJkLTRkNzQtYTBiNy05YmI4MWMxNDZmMWMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhMTAtYXV0aCIsInNlc3Npb25fc3RhdGUiOiIzNjJjMmJiZi1jMzU2LTRjNTEtOGYxMi02YzMyOWRmN2FiYjciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHBzOi8vYTEwLXNhYXMtYXV0aC5hMTBuZXR3b3Jrcy5jb20iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1hMTBuZXR3b3JrcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjM2MmMyYmJmLWMzNTYtNGM1MS04ZjEyLTZjMzI5ZGY3YWJiNyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlZpc2hhbCBNYW5lIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidm1hbmVAYTEwbmV0d29ya3MuY29tIiwiZ2l2ZW5fbmFtZSI6IlZpc2hhbCIsImZhbWlseV9uYW1lIjoiTWFuZSIsImVtYWlsIjoidm1hbmVAYTEwbmV0d29ya3MuY29tIn0.DjKgXhCe2KXmq8EP1QkHKRIlmNs592Ryr_ganjJsnSv9wtnmloBSCFa6k94zX38xrk9U5prXZiutcbvk-tx0n9nLPixnRxczMXbYP-r4T_4rIx491b1i8JRtKx8SlXjYSDlWoFXIbMHhR7OqpM3fvntaACXmeKXmqV2J1-P1OxXxxXsbrx-4XCpZnFBkuC85wJd3UnaPkKO7qTXznh6m17UrHQqg9m85ddDdEU5OhcPULfnTf9qfiWmeqjQ04umaG7w-OqfHzaOkWIreL5FdCfxw1CkqkWbDldMPWYF73A8DJjAqdSLKK990re0wyCzFb3F8ewNbQUQIJQj_-RduUQ
+2023-03-16T13:02:54.974129Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value:  isEmpty: true
+2023-03-16T13:02:54.974161Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10Auth-http-callback-200 key:x-redirect-uri value: 
+2023-03-16T13:02:54.974171Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: a10AuthHttpCallback received 200 OK from auth server, continuing to microservice!
+2023-03-16T13:02:54.985291Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 5 : A10AuthHttpCall::onResponseHeaders(10, false)
+[2023-03-16T13:02:54.964Z] "GET /favicon.ico HTTP/1.1" 404 - via_upstream - "-" 0 2523 21 11 "10.244.0.1" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "e9432191-a545-9440-9215-f76fe655fc99" "csf-chandan-demo-app.dev.oci.a10networks.com" "10.244.1.66:8000" inbound|8000|| 127.0.0.6:48853 10.244.1.66:8000 10.244.0.1:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local default
+2023-03-16T13:08:09.894600Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6 version: 1: A10AuthHttpCall::onRequestHeaders(15, true)
+2023-03-16T13:08:09.895215Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader Start-----------
+2023-03-16T13:08:09.895255Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 15
+2023-03-16T13:08:09.895277Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> Final path : /?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:08:09.895296Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> cluster : outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:08:09.895312Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>>>>>>>>> authority : a10-auth-public-auth-master.a10-saas-security.svc.cluster.local
+2023-03-16T13:08:09.895329Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :authority -> csf-chandan-demo-app.dev.oci.a10networks.com
+2023-03-16T13:08:09.895347Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :path -> /
+2023-03-16T13:08:09.895364Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :method -> GET
+2023-03-16T13:08:09.895380Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: :scheme -> https
+2023-03-16T13:08:09.895396Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: user-agent -> curl/7.68.0
+2023-03-16T13:08:09.895412Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: accept -> */*
+2023-03-16T13:08:09.895429Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-for -> 10.244.0.1
+2023-03-16T13:08:09.895479Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-proto -> https
+2023-03-16T13:08:09.895498Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-request-id -> 8f4741c9-af56-9271-b0a6-584e4f915d17
+2023-03-16T13:08:09.895515Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-attempt-count -> 1
+2023-03-16T13:08:09.895547Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-traceid -> c6e90e6186fa4afe5c22854d43d01655
+2023-03-16T13:08:09.895559Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-spanid -> 5c22854d43d01655
+2023-03-16T13:08:09.895562Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-b3-sampled -> 1
+2023-03-16T13:08:09.895564Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-envoy-internal -> true
+2023-03-16T13:08:09.895568Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: Inside onRequestHeaders:: x-forwarded-client-cert -> By=spiffe://cluster.local/ns/chandan/sa/default;Hash=166befb4c84ac3bcef20852452b5965059cdf4167198cc8c8c3bb3d26e7fca54;Subject="";URI=spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account
+2023-03-16T13:08:09.895886Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: A10AuthHttpCall::onRequestHeaders() succeeded http call
+2023-03-16T13:08:09.895905Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: ------------Inside onRequestHeader End-----------
+2023-03-16T13:08:09.903523Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6: A10AuthHttpCall::a10AuthHttpCallback(12, 0, 0)
+2023-03-16T13:08:09.903560Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:6 A10AuthHttpCall::a10AuthHttpCallback() setEffectiveContext() succeeded.
+2023-03-16T13:08:09.903628Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: headers: 12
+2023-03-16T13:08:09.903667Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>:status -> 302
+2023-03-16T13:08:09.903671Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>date -> Thu, 16 Mar 2023 13:08:09 GMT
+2023-03-16T13:08:09.903674Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>vary -> Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+2023-03-16T13:08:09.903677Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>location -> https://a10-saas-auth.dev.oci.a10networks.com/changeTenancy?redirectUri=https://csf-chandan-demo-app.dev.oci.a10networks.com/
+2023-03-16T13:08:09.903680Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-content-type-options -> nosniff
+2023-03-16T13:08:09.903684Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-xss-protection -> 1; mode=block
+2023-03-16T13:08:09.903686Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>cache-control -> no-cache, no-store, max-age=0, must-revalidate
+2023-03-16T13:08:09.903689Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>pragma -> no-cache
+2023-03-16T13:08:09.903692Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>expires -> 0
+2023-03-16T13:08:09.903694Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-frame-options -> DENY
+2023-03-16T13:08:09.903697Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>content-length -> 0
+2023-03-16T13:08:09.903700Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: >>>>x-envoy-upstream-service-time -> 7
+2023-03-16T13:08:09.903703Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6: A10AuthHttpCall::a10AuthHttpCallback :status is 302
+2023-03-16T13:08:09.903709Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6: A10AuthHttpCall::a10AuthHttpCallback Response Body 
+2023-03-16T13:08:09.903723Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context_id:6 A10AuthHttpCall::a10AuthHttpCallback() sendLocalResponse() succeeded.
+2023-03-16T13:08:09.903767Z	warning	envoy wasm	wasm log a10-auth-public-filter a10-auth-public-filter-vm: context id: 6 : A10AuthHttpCall::onResponseHeaders(11, true)
+[2023-03-16T13:08:09.894Z] "GET / HTTP/1.1" 302 -  - "-" 0 0 9 7 "10.244.0.1" "curl/7.68.0" "8f4741c9-af56-9271-b0a6-584e4f915d17" "csf-chandan-demo-app.dev.oci.a10networks.com" "-" inbound|8000|| - 10.244.1.66:8000 10.244.0.1:0 outbound_.8000_._.csf-chandan-demo-app-svc.chandan.svc.cluster.local -

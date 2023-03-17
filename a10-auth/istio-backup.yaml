@@ -1,0 +1,42 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.istio.io/v1beta1","kind":"Gateway","metadata":{"annotations":{},"name":"istio-gateway","namespace":"default"},"spec":{"selector":{"istio":"ingressgateway"},"servers":[{"hosts":["*"],"port":{"name":"http","number":80,"protocol":"HTTP"},"tls":{"httpsRedirect":true}},{"hosts":["*"],"port":{"name":"https","number":443,"protocol":"HTTPS"},"tls":{"credentialName":"istio-vs-tls-secret-dev-oci","mode":"SIMPLE"}},{"hosts":["a10-call-home.a10networks.com"],"port":{"name":"https-call-home-mutual-tls","number":443,"protocol":"HTTPS"},"tls":{"credentialName":"a10-call-home-credential","mode":"MUTUAL"}}]}}
+  creationTimestamp: "2023-03-14T09:43:05Z"
+  generation: 2
+  name: istio-gateway
+  namespace: default
+  resourceVersion: "115204716"
+  uid: d0c49a4c-5bc6-449e-9631-17fd80e943a8
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*'
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
+    tls:
+      httpsRedirect: true
+  - hosts:
+    - '*'
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      credentialName: istio-vs-tls-secret-dev-oci
+      mode: SIMPLE
+  - hosts:
+    - a10-call-home.a10networks.com
+    port:
+      name: https-call-home-mutual-tls
+      number: 443
+      protocol: HTTPS
+    tls:
+      credentialName: a10-call-home-credential
+      mode: MUTUAL

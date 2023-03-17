@@ -1,0 +1,45 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.istio.io/v1alpha3","kind":"EnvoyFilter","metadata":{"annotations":{},"name":"a10-auth-public-filter","namespace":"vmane"},"spec":{"configPatches":[{"applyTo":"HTTP_FILTER","match":{"context":"SIDECAR_INBOUND","listener":{"filterChain":{"filter":{"name":"envoy.http_connection_manager","subFilter":{"name":"envoy.router"}}}}},"patch":{"operation":"INSERT_BEFORE","value":{"name":"a10-auth-public-filter","typed_config":{"@type":"type.googleapis.com/udpa.type.v1.TypedStruct","type_url":"type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm","value":{"config":{"configuration":{"@type":"type.googleapis.com/google.protobuf.StringValue","value":"outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local,outbound|80||a10-auth-bearer-app.a10-saas-security.svc.cluster.local"},"root_id":"a10-auth-public-filter","vm_config":{"code":{"local":{"filename":"/var/local/wasm/a10-auth-wasm-filter.wasm"}},"runtime":"envoy.wasm.runtime.v8","vm_id":"a10-auth-public-filter-vm"}}}}}}}],"workloadSelector":{"labels":{"istio-envoy-filter":"a10-auth-public-filter"}}}}
+  creationTimestamp: "2023-03-16T13:15:55Z"
+  generation: 1
+  name: a10-auth-public-filter
+  namespace: vmane
+  resourceVersion: "115933376"
+  uid: da1c9722-0648-45bd-8ab0-0ee250c016fe
+spec:
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: SIDECAR_INBOUND
+      listener:
+        filterChain:
+          filter:
+            name: envoy.http_connection_manager
+            subFilter:
+              name: envoy.router
+    patch:
+      operation: INSERT_BEFORE
+      value:
+        name: a10-auth-public-filter
+        typed_config:
+          '@type': type.googleapis.com/udpa.type.v1.TypedStruct
+          type_url: type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm
+          value:
+            config:
+              configuration:
+                '@type': type.googleapis.com/google.protobuf.StringValue
+                value: outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local,outbound|80||a10-auth-bearer-app.a10-saas-security.svc.cluster.local
+              root_id: a10-auth-public-filter
+              vm_config:
+                code:
+                  local:
+                    filename: /var/local/wasm/a10-auth-wasm-filter.wasm
+                runtime: envoy.wasm.runtime.v8
+                vm_id: a10-auth-public-filter-vm
+  workloadSelector:
+    labels:
+      istio-envoy-filter: a10-auth-public-filter

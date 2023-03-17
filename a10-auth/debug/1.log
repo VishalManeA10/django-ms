@@ -1,0 +1,431 @@
+2023-03-16T12:13:45.487957Z	info	FLAG: --concurrency="2"
+2023-03-16T12:13:45.488174Z	info	FLAG: --domain="vmane.svc.cluster.local"
+2023-03-16T12:13:45.488203Z	info	FLAG: --help="false"
+2023-03-16T12:13:45.488223Z	info	FLAG: --log_as_json="false"
+2023-03-16T12:13:45.488255Z	info	FLAG: --log_caller=""
+2023-03-16T12:13:45.488276Z	info	FLAG: --log_output_level="default:info"
+2023-03-16T12:13:45.488296Z	info	FLAG: --log_rotate=""
+2023-03-16T12:13:45.488315Z	info	FLAG: --log_rotate_max_age="30"
+2023-03-16T12:13:45.488333Z	info	FLAG: --log_rotate_max_backups="1000"
+2023-03-16T12:13:45.488351Z	info	FLAG: --log_rotate_max_size="104857600"
+2023-03-16T12:13:45.488368Z	info	FLAG: --log_stacktrace_level="default:none"
+2023-03-16T12:13:45.488390Z	info	FLAG: --log_target="[stdout]"
+2023-03-16T12:13:45.488411Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2023-03-16T12:13:45.488467Z	info	FLAG: --outlierLogPath=""
+2023-03-16T12:13:45.488499Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2023-03-16T12:13:45.488520Z	info	FLAG: --proxyLogLevel="warning"
+2023-03-16T12:13:45.488541Z	info	FLAG: --serviceCluster="istio-proxy"
+2023-03-16T12:13:45.488560Z	info	FLAG: --stsPort="0"
+2023-03-16T12:13:45.488580Z	info	FLAG: --templateFile=""
+2023-03-16T12:13:45.488602Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2023-03-16T12:13:45.488632Z	info	FLAG: --vklog="0"
+2023-03-16T12:13:45.488658Z	info	Version 1.13.3-b28579cb30c12c428ea58279b7c06f3302abe924-Clean
+2023-03-16T12:13:45.488943Z	info	Proxy role	ips=[10.244.1.67 fe80::b46a:5dff:fe40:4938] type=sidecar id=python-ms-practice-cdcfc46f8-92nsz.vmane domain=vmane.svc.cluster.local
+2023-03-16T12:13:45.489039Z	info	Apply proxy config from env {}
+
+2023-03-16T12:13:45.500766Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2023-03-16T12:13:45.501121Z	info	JWT policy is third-party-jwt
+2023-03-16T12:13:45.501720Z	error	error in getting aws info for iam/info : Get "http://[fd00:ec2::254]/latest/meta-data/iam/info": dial tcp [fd00:ec2::254]:80: connect: network is unreachable
+2023-03-16T12:13:45.509186Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2023-03-16T12:13:45.509295Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2023-03-16T12:13:45.509532Z	info	citadelclient	Citadel client using custom root cert: var/run/secrets/istio/root-cert.pem
+2023-03-16T12:13:45.509207Z	info	Opening status port 15020
+2023-03-16T12:13:45.544125Z	info	ads	All caches have been synced up in 59.336474ms, marking server ready
+2023-03-16T12:13:45.544705Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2023-03-16T12:13:45.544738Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2023-03-16T12:13:45.551232Z	info	Pilot SAN: [istiod.istio-system.svc]
+2023-03-16T12:13:45.553645Z	info	starting Http service at 127.0.0.1:15004
+2023-03-16T12:13:45.553724Z	info	sds	Starting SDS grpc server
+2023-03-16T12:13:45.554719Z	info	Starting proxy agent
+2023-03-16T12:13:45.554752Z	info	Epoch 0 starting
+2023-03-16T12:13:45.554775Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2023-03-16T12:13:45.649618Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2023-03-16T12:13:45.732739Z	info	cache	generated new workload certificate	latency=187.636463ms ttl=23h59m59.267286271s
+2023-03-16T12:13:45.732864Z	info	cache	Root cert has changed, start rotating root cert
+2023-03-16T12:13:45.732929Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:0 Version:
+2023-03-16T12:13:45.733020Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.266983927s
+2023-03-16T12:13:45.765789Z	info	ads	ADS: new connection for node:python-ms-practice-cdcfc46f8-92nsz.vmane-1
+2023-03-16T12:13:45.765892Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.234111971s
+2023-03-16T12:13:45.766184Z	info	ads	SDS: PUSH request for node:python-ms-practice-cdcfc46f8-92nsz.vmane resources:1 size:1.1kB resource:ROOTCA
+2023-03-16T12:13:45.806714Z	info	ads	ADS: new connection for node:python-ms-practice-cdcfc46f8-92nsz.vmane-2
+2023-03-16T12:13:45.806861Z	info	cache	returned workload certificate from cache	ttl=23h59m59.193146459s
+2023-03-16T12:13:45.807055Z	info	ads	SDS: PUSH request for node:python-ms-practice-cdcfc46f8-92nsz.vmane resources:1 size:4.0kB resource:default
+2023-03-16T12:13:46.262366Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:13:47.197861Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:13:49.197193Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:13:51.195983Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:13:53.196283Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:13:55.198806Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:13:57.195839Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:13:59.196548Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:01.195797Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:03.196902Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:05.196233Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:07.197089Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:09.196527Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:11.197165Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:13.196009Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:15.196540Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:17.196238Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:19.196904Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:21.198836Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:23.196742Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:25.196331Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:27.196777Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:29.196276Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:31.197208Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:33.199046Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:35.198941Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:37.196729Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:39.200133Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:41.197005Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:43.196586Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:45.197710Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:47.195941Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:49.198788Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:51.195898Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:53.198708Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:55.196989Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:57.197861Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:14:59.196062Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:01.196937Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:03.196497Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:05.196203Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:07.196022Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:09.196138Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:11.196507Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:13.196677Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:15.197012Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:17.197563Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:19.196877Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:21.197106Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:23.197052Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:25.196319Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:27.196281Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:29.197383Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:31.198627Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:33.196271Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:35.195969Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:37.196645Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:39.196278Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:41.196767Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:43.196619Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:45.197067Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:47.197154Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:49.196539Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:51.195931Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:53.200124Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:55.197695Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:57.197106Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:15:59.198183Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:01.196856Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:03.196711Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:05.196556Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:07.198231Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:09.202225Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:11.196982Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:13.196834Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:15.196667Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:17.199003Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:19.197045Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:21.197206Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:23.196005Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:25.196092Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:27.197043Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:29.198140Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 1 successful, 0 rejected; lds updates: 0 successful, 1 rejected
+2023-03-16T12:16:31.086407Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:16:31.197246Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 2 successful, 0 rejected; lds updates: 0 successful, 2 rejected
+2023-03-16T12:16:32.018074Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:16:33.198489Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:35.196194Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:37.196480Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:39.197403Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:41.196686Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:43.196357Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:45.196699Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:47.200553Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:49.196419Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:51.199771Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:53.203525Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:55.197651Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:57.196594Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:16:59.196127Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:01.197891Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:03.199343Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:05.196135Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:07.196577Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:09.199855Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:11.197292Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:13.196170Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:15.196422Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:17.195916Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:19.197076Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:21.197602Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:23.196316Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:25.196477Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:27.196169Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:29.197035Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:31.197347Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:33.197982Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:35.196216Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:37.199546Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:39.196087Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:41.196606Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:43.196206Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:45.196777Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:47.196702Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:49.197272Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:51.196179Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:53.196570Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:55.196818Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:57.196905Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:17:59.196860Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:01.197613Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:03.195857Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:05.196564Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:07.196109Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:09.196314Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:11.196349Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:13.197796Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:15.197180Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:17.196169Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:19.196285Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:21.195745Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:23.196887Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:25.196228Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:27.195649Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:29.196476Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:31.196662Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:33.197369Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:35.197110Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:37.198285Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:39.197166Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:41.196641Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:43.200034Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:45.196265Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:47.197340Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:49.196526Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:51.195999Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:53.196330Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:55.196840Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:57.196191Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:18:59.196621Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:01.196283Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:03.196236Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:05.196243Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:07.206137Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:09.196286Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:11.196152Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:13.196500Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:15.196467Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:17.196467Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:19.197374Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:21.196078Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:23.198363Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:25.195984Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:27.196145Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:29.196299Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:31.196984Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:33.196717Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:35.196103Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:37.196696Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:39.198532Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:41.196593Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:43.196366Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:45.197064Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:47.197512Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:49.196191Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:51.195893Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:53.196673Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:55.196142Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:57.196637Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:19:59.196117Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:01.196325Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:03.196654Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:05.196770Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:07.196657Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:09.197025Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:11.196456Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:13.200134Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:15.197409Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:17.197541Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:19.196633Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:21.197541Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:23.196690Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:25.196167Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:27.196761Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:29.196715Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:31.197087Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:33.197153Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:35.196106Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:37.197904Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:39.198554Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:41.195834Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:43.195667Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:45.196217Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:47.196752Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:49.196539Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:51.198261Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:53.196365Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:55.196911Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:57.200267Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:20:59.196686Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:01.196723Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:03.197450Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:05.196606Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:07.196590Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:09.196464Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:11.197595Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:13.197185Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:15.196655Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:17.196411Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:19.196666Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:21.204556Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:23.197606Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:25.198557Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:27.196948Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:29.196613Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:31.196384Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:33.197310Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:35.196750Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:37.196256Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 3 successful, 0 rejected; lds updates: 0 successful, 3 rejected
+2023-03-16T12:21:38.384255Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:21:39.199562Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 4 successful, 0 rejected; lds updates: 0 successful, 4 rejected
+2023-03-16T12:21:41.196639Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 4 successful, 0 rejected; lds updates: 0 successful, 4 rejected
+2023-03-16T12:21:43.196034Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 4 successful, 0 rejected; lds updates: 0 successful, 4 rejected
+2023-03-16T12:21:45.196048Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 4 successful, 0 rejected; lds updates: 0 successful, 4 rejected
+2023-03-16T12:21:47.198881Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 4 successful, 0 rejected; lds updates: 0 successful, 4 rejected
+2023-03-16T12:21:48.925738Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:21:49.196332Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:21:51.200226Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:21:53.197130Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:21:55.198310Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:21:57.196895Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:21:59.196042Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:01.198355Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:03.197643Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:05.196354Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:07.198238Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:09.198192Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:11.196927Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:13.196964Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:15.196844Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:17.202953Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:19.197546Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:21.203329Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:23.197984Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:25.197817Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:27.197372Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:29.196089Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:31.196902Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:33.196787Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:35.197630Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:37.197177Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:39.198152Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:41.195879Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:43.200539Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:45.196882Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:47.196413Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:49.198399Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:51.197394Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:53.196053Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:55.196576Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:57.198916Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:22:59.204071Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:01.197149Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:03.196107Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:05.197271Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:07.196300Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:09.196033Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:11.195977Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:13.199607Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:15.196393Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:17.196114Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:19.196564Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:21.195922Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:23.196332Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:25.198464Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:27.200657Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:29.196928Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:31.196690Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:33.200159Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:35.197227Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:37.196795Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:39.196926Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:41.195888Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:43.197450Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:45.195864Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:47.196780Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:49.196810Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:51.197310Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:53.197406Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:55.196721Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:57.196107Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:23:59.196921Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:01.196980Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:03.196346Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:05.198113Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:07.197980Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:09.195840Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:11.196693Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:13.197075Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:15.196445Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:17.197337Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:19.195829Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:21.196197Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:23.196680Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:25.198035Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:27.196885Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:29.196364Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:31.196136Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:33.196996Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:35.197017Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:37.196491Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:39.205108Z	warn	Envoy proxy is NOT ready: config received from XDS server, but was rejected: cds updates: 5 successful, 0 rejected; lds updates: 0 successful, 5 rejected
+2023-03-16T12:24:41.196938Z	info	Readiness succeeded in 10m55.711392821s
+2023-03-16T12:24:41.197378Z	info	Envoy proxy is ready
+2023-03-16T12:24:48.597381Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:25:48.478266Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+[2023-03-16T12:26:20.017Z] "GET /tenants/a10networks HTTP/1.1" 404 - via_upstream - "-" 0 2943 17 16 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "35c4ea1b-bc34-98be-bdaa-709d55beabcd" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:58269 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:28.224Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 5163 16 15 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "6cb71f7b-d847-9152-a81e-acdb302653ae" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:58269 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:30.559Z] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 - via_upstream - "-" 0 121457 16 16 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "7b12af62-374f-9632-9122-a90d14d7120e" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:58269 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:30.561Z] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 - via_upstream - "-" 0 3385 15 14 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "a491def7-5155-9537-a252-f6bc10a1813b" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:30.883Z] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 - via_upstream - "-" 0 817 1 1 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "f4224412-f5cb-999b-9392-4f065d079dff" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:31.238Z] "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 - via_upstream - "-" 0 89476 2 1 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "c8d1c34d-4589-9f8a-a695-4a79269b0e99" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:32.124Z] "GET /static/rest_framework/css/default.css HTTP/1.1" 200 - via_upstream - "-" 0 1152 3 2 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "8cf7c52f-f0d3-956d-a326-8a1031ca75bb" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:32.397Z] "GET /static/rest_framework/js/default.js HTTP/1.1" 200 - via_upstream - "-" 0 1268 2 1 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "1b8d5b0f-250a-9ab3-844a-393cb6871e86" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:32.684Z] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 - via_upstream - "-" 0 3597 1 1 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "6ce3acdb-514e-9dad-a117-fcef2aff2162" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:32.976Z] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 - via_upstream - "-" 0 1719 3 3 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "a995bd0a-34be-9a09-959c-5f09fe08e28d" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:33.264Z] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 - via_upstream - "-" 0 13632 4 3 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "0d82b80c-b4cf-9959-b39f-e162e69cfd16" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:33.369Z] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 - via_upstream - "-" 0 39680 3 2 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "c3bc56e5-3c88-9186-8758-3e7867d73216" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:58269 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+[2023-03-16T12:26:33.494Z] "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 - via_upstream - "-" 0 1458 1 1 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "169b32b6-94f1-94a0-90c6-f7ab71156bb3" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:44877 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+2023-03-16T12:26:44.547297Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+2023-03-16T12:26:59.743873Z	warning	envoy config	gRPC config for type.googleapis.com/envoy.config.listener.v3.Listener rejected: Error adding/updating listener(s) virtualInbound: Invalid path: /var/local/wasm/a10-auth-public-filter.wasm
+
+[2023-03-16T12:28:10.952Z] "GET /users/1 HTTP/1.1" 200 - via_upstream - "-" 0 65 6 5 "10.244.1.128" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" "58903757-deee-9295-a51e-a868af5c4684" "python-ms-practice-svc.dev.oci.a10networks.com" "10.244.1.67:9001" inbound|9001|| 127.0.0.6:35617 10.244.1.67:9001 10.244.1.128:0 outbound_.9001_._.python-ms-practice-svc.vmane.svc.cluster.local default
+
+
+

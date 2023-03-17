@@ -1,0 +1,39 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  generation: 1
+  name: a10-auth-public-filter
+  namespace: vmane
+spec:
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: SIDECAR_INBOUND
+      listener:
+        filterChain:
+          filter:
+            name: envoy.filters.network.http_connection_manager
+            subFilter:
+              name: envoy.filters.http.router
+    patch:
+      operation: INSERT_FIRST
+      value:
+        name: a10-auth-public-filter
+        typed_config:
+          '@type': type.googleapis.com/udpa.type.v1.TypedStruct
+          type_url: type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm
+          value:
+            config:
+              configuration:
+                '@type': type.googleapis.com/google.protobuf.StringValue
+                value: outbound|80||a10-auth-public-auth-master.a10-saas-security.svc.cluster.local,outbound|80||a10-auth-bearer-app.a10-saas-security.svc.cluster.local
+              root_id: a10-auth-public-filter
+              vm_config:
+                code:
+                  local:
+                    filename: /var/local/wasm/a10-auth-public-filter.wasm
+                runtime: envoy.wasm.runtime.v8
+                vm_id: a10-auth-public-filter-vm
+  workloadSelector:
+    labels:
+      istio-envoy-filter: a10-auth-public-filter

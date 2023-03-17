@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1     
+kind: VirtualService 
+metadata: 
+  name: vmane-vs
+  namespace:  default
+spec: 
+  gateways: 
+  - istio-gateway
+  hosts: 
+  - python-ms-practice-svc.dev.oci.a10networks.com 
+  http: 
+  - match: 
+    - headers: 
+        host: 
+          exact: python-ms-practice-svc.dev.oci.a10networks.com 
+    route: 
+    - destination: 
+        host: python-ms-practice-svc.vmane.svc.cluster.local 
+        port: 
+          number: 9001
